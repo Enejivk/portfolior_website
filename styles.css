@@ -186,7 +186,8 @@ footer p {
 
 @media only screen and (max-width: 490px) {
     .home-text p {
-        font-size: 2rem;
+        margin-top: 2rem;
+        font-size: 1.2rem;
     }
     .work-item {
         transform: scaleX(0.8);
