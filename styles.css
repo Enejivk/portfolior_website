@@ -152,11 +152,12 @@ footer p {
 .about-session {
     padding-top: 10rem;
     line-height: 30px;
-    width: 55%;
+    width: 80%;
     margin: 0 auto;
+    padding-bottom: 30rem;
 }
 .about-session p {
-    text-align: center;
+    text-align:justify;
 }
 .about-session h1 {
     text-transform: uppercase;
