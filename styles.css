@@ -51,8 +51,7 @@ footer a {
 }
 
 nav ul a:hover,
-.home-text a:hover,
-footer a:hover {
+.home-text a:hover{
     background-color: black;
     color: rgb(245, 243, 240);
     transform: scale(1.6);
@@ -171,7 +170,6 @@ footer p {
     }
     .toggle-menu {
         display: none;
-        transition: ease-in-out 1s;
     }
     #menu {
         display: block;
@@ -182,6 +180,13 @@ footer p {
         #close {
         display: block;
     }
+    footer {
+        flex-direction: column;
+    }
+     .home-text p {
+        margin-top: 2rem;
+        font-size: 1.9rem;
+    }
 }
 
 @media only screen and (max-width: 490px) {
@@ -190,14 +195,11 @@ footer p {
         font-size: 1.2rem;
     }
     .work-item {
-        transform: scaleX(0.8);
+        transform: scaleX(0.7);
         margin: 1rem;
     }
     footer ul li {
         margin: 5px 6px;
-    }
-    footer {
-        flex-direction: column;
     }
 
 }
