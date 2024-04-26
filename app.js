@@ -4,19 +4,31 @@ const body = document.querySelector('body')
 const close = document.getElementById('close')
 
 
-menuBtn.addEventListener('click', () => {
-    
+
+
+const displayMenu = () => {
     if(menu.classList.contains('toggle-menu')){
         menu.classList.remove('toggle-menu')
         menuBtn.style.display = 'none'
-    }
-})
-
-close.addEventListener('click', () => {
-    if(menu.classList.contains('toggle-menu') === false) {
-         menu.classList.add('toggle-menu')
+    } else {
+        menu.classList.add('toggle-menu')
          menuBtn.style.display = 'block'
     }
+}
+
+const observer = new ResizeObserver((entry)=> {
+    widthOfWindow = entry[0].contentRect.width
+    if (menu.classList.contains('toggle-menu') && widthOfWindow < 847 )
+        menuBtn.style.display = 'block';
+    else {
+        menuBtn.style.display = 'none';   
+    }
 })
 
-con
+observer.observe(document.body)
+menuBtn.addEventListener('click', displayMenu)
+document.addEventListener('scroll', () => {
+        menu.classList.add('toggle-menu')
+        menuBtn.style.display = 'block'
+})
+close.addEventListener('click', displayMenu)
