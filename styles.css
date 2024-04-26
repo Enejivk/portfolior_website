@@ -33,7 +33,7 @@ ul li {
     list-style: none;
     margin: 40px 13px;
 }
-a{
+a {
     display: inline-block;
     text-decoration: none;
     color: black;
@@ -41,8 +41,6 @@ a{
 nav ul a,
 .home a,
 footer a {
-    
-    
     padding: 14px 20px;
     border-radius: 30px;
     border: 1px solid black;
@@ -51,7 +49,7 @@ footer a {
 }
 
 nav ul a:hover,
-.home-text a:hover{
+.home-text a:hover {
     background-color: black;
     color: rgb(245, 243, 240);
     transform: scale(1.6);
@@ -156,7 +154,7 @@ footer p {
     padding-bottom: 30rem;
 }
 .about-session p {
-    text-align:justify;
+    text-align: justify;
 }
 .about-session h1 {
     text-transform: uppercase;
@@ -177,13 +175,13 @@ footer p {
     footer ul {
         display: flex;
     }
-        #close {
+    #close {
         display: block;
     }
     footer {
         flex-direction: column;
     }
-     .home-text p {
+    .home-text p {
         margin-top: 2rem;
         font-size: 1.9rem;
     }
@@ -201,5 +199,7 @@ footer p {
     footer ul li {
         margin: 5px 6px;
     }
-
+    .work-item img:hover {
+        transform: scale(1);
+    }
 }
