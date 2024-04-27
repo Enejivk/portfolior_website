@@ -29,6 +29,10 @@ observer.observe(document.body)
 menuBtn.addEventListener('click', displayMenu)
 document.addEventListener('scroll', () => {
         menu.classList.add('toggle-menu')
-        menuBtn.style.display = 'block'
+        
+        if (window.innerWidth < 847){
+            menuBtn.style.display = 'block'
+        }
+        
 })
 close.addEventListener('click', displayMenu)
