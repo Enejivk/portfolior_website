@@ -9,15 +9,18 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .center {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+
 body {
     font-family: "Sedan", serif;
     font-weight: 400;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -28,16 +31,19 @@ nav {
     left: 5%;
     z-index: 10;
 }
+
 ul li {
     display: inline-block;
     list-style: none;
     margin: 40px 13px;
 }
+
 a {
     display: inline-block;
     text-decoration: none;
     color: var(--clr-black);
 }
+
 nav ul a,
 .home a,
 footer a {
@@ -54,6 +60,7 @@ nav ul a:hover,
     color: var(--clr-white);
     transform: scale(1.6);
 }
+
 .logo {
     font-size: 150px;
     line-height: 60px;
@@ -64,6 +71,7 @@ nav ul a:hover,
     cursor: pointer;
     height: 70px;
 }
+
 #close {
     font-family: "Roboto", sans-serif;
     font-weight: 10;
@@ -73,6 +81,7 @@ nav ul a:hover,
     transition: 0.6s;
     display: none;
 }
+
 #close:active {
     border: 2px solid var(--clr-black);
     transform: scale(2);
@@ -98,16 +107,20 @@ nav ul a:hover,
     border-radius: 14rem;
     overflow: hidden;
 }
+
 .home-text {
     width: 40rem;
     text-align: center;
 }
+
 .home-text p {
     font-size: 3.3rem;
 }
+
 .home-text a {
     margin-top: 20px;
 }
+
 img {
     width: 25rem;
     height: 25rem;
@@ -119,10 +132,12 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .work-item {
     margin: 3rem;
     text-align: center;
 }
+
 .work-item img {
     transition: 0.4s;
 }
@@ -134,18 +149,22 @@ img {
     color: var(--clr-black);
     text-decoration: none;
 }
+
 .work-item h2 {
     border-bottom: 2px solid var(--clr-black);;
     padding-bottom: 10px;
 }
+
 footer {
     background-color: var(--clr-black);
     padding: 2px 4rem;
     justify-content: space-around;
 }
+
 footer p {
     color: var(--clr-white);
 }
+
 .about-session {
     padding-top: 10rem;
     line-height: 30px;
@@ -153,9 +172,11 @@ footer p {
     margin: 0 auto;
     padding-bottom: 30rem;
 }
+
 .about-session p {
     text-align: justify;
 }
+
 .about-session h1 {
     text-transform: uppercase;
     text-align: center;
