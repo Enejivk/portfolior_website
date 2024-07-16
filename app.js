@@ -1,10 +1,13 @@
 const menuBtn = document.getElementById('menu');
-const menu = document.getElementById('toggle-menu')
-const body = document.querySelector('body')
-const close = document.getElementById('close')
+const menu = document.getElementById('toggle-menu');
+const body = document.querySelector('body');
+const close = document.getElementById('close');
+const workLink = document.getElementById('workLink');
 
-
-
+workLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'index.html#work'
+})
 
 const displayMenu = () => {
     if(menu.classList.contains('toggle-menu')){
@@ -33,6 +36,5 @@ document.addEventListener('scroll', () => {
         if (window.innerWidth < 847){
             menuBtn.style.display = 'block'
         }
-        
 })
 close.addEventListener('click', displayMenu)
