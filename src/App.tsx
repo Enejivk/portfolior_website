@@ -7,8 +7,7 @@ import VideoPresentation from './components/sections/VideoPresentation';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Experience from './components/sections/Experience';
-import Faq from './components/sections/Faq';
-import Contact from './components/sections/Contact';
+
 
 function App() {
   useEffect(() => {
@@ -68,8 +67,6 @@ function App() {
       <Projects />
       <Skills />
       <Experience />
-      <Faq />
-      <Contact />
       <Footer />
     </div>
   );

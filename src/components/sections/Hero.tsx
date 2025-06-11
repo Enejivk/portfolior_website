@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     if (heroRef.current) {
       heroRef.current.classList.add('animate-fadeIn');
@@ -91,11 +91,11 @@ const Hero: React.FC = () => {
     // Add parallax effect
     const handleMouseMove = (e: MouseEvent) => {
       if (!imageContainerRef.current) return;
-      
+
       const { clientX, clientY } = e;
       const xPos = (clientX / window.innerWidth - 0.5) * 30;
       const yPos = (clientY / window.innerHeight - 0.5) * 30;
-      
+
       imageContainerRef.current.style.transform = `translate(${xPos}px, ${yPos}px)`;
     };
 
@@ -114,11 +114,11 @@ const Hero: React.FC = () => {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   return (
-    <section 
-      id="hero" 
-      ref={heroRef} 
+    <section
+      id="hero"
+      ref={heroRef}
       className="min-h-screen flex items-center justify-center bg-gray-950 relative overflow-hidden pt-16"
     >
       <canvas
@@ -157,10 +157,10 @@ const Hero: React.FC = () => {
               <p className="text-xl text-gray-400 max-w-lg">
                 Full-stack developer specializing in building exceptional digital experiences that combine innovation with pixel-perfect execution.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   size="lg"
                   icon={<Mail />}
                   onClick={() => window.location.href = '#contact'}
@@ -168,8 +168,8 @@ const Hero: React.FC = () => {
                 >
                   Get in Touch
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   icon={<FileText />}
                   className="border-gray-700 hover:border-blue-500"
@@ -178,9 +178,9 @@ const Hero: React.FC = () => {
                 </Button>
               </div>
             </div>
-            
+
             <div className="mt-12">
-              <button 
+              <button
                 onClick={scrollToProjects}
                 className="group inline-flex items-center text-gray-400 hover:text-blue-500 transition-colors duration-300"
               >
@@ -194,12 +194,12 @@ const Hero: React.FC = () => {
             {/* Main hexagonal image */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96">
               <div className="relative w-full h-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg rotate-45 transform hover:scale-105 transition-transform duration-500"></div>
-                <div className="absolute inset-2 overflow-hidden rounded-lg rotate-45">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full transform hover:scale-105 transition-transform duration-500"></div>
+                <div className="absolute inset-2 overflow-hidden rounded-full">
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                    src="/bg-removed.png"
                     alt="Professional headshot"
-                    className="w-full h-full object-cover transform -rotate-45 scale-150"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
