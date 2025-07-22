@@ -60,34 +60,7 @@ const Projects: React.FC = () => {
             A collection of my recent work showcasing my skills and expertise.
           </p>
           
-          <div className="flex justify-center mt-8 space-x-4">
-            <button
-              onClick={() => {
-                setFilter('all');
-                setVisibleProjects(3);
-              }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                filter === 'all' 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-              }`}
-            >
-              All Projects
-            </button>
-            <button
-              onClick={() => {
-                setFilter('featured');
-                setVisibleProjects(3);
-              }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                filter === 'featured' 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-              }`}
-            >
-              Featured
-            </button>
-          </div>
+         
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,14 +72,18 @@ const Projects: React.FC = () => {
             >
               <Card hoverEffect>
                 {project.imageUrl && (
-                  <Card.Image src={project.imageUrl} alt={project.title} />
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
                 )}
-                <Card.Content>
+                <div className="p-4">
                   <div className="flex items-start justify-between mb-3">
-                    <Card.Title>{project.title}</Card.Title>
+                    <span className="font-semibold text-lg">{project.title}</span>
                     <project.icon className="h-6 w-6 text-blue-500" />
                   </div>
-                  <Card.Description>{project.description}</Card.Description>
+                  <p className="text-gray-400 mb-2">{project.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span
@@ -117,8 +94,8 @@ const Projects: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                </Card.Content>
-                <Card.Footer>
+                </div>
+                <div className="px-4 py-3 border-t border-gray-800">
                   <div className="flex justify-between">
                     {project.githubUrl && (
                       <a
@@ -143,7 +120,7 @@ const Projects: React.FC = () => {
                       </a>
                     )}
                   </div>
-                </Card.Footer>
+                </div>
               </Card>
             </div>
           ))}

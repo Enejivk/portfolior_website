@@ -74,25 +74,16 @@ const About: React.FC = () => {
               About <span className="text-blue-500">Me</span>
             </h2>
             <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-              I'm a passionate Software Engineer with a deep love for creating elegant solutions to complex problems. With expertise in full-stack development, I specialize in building scalable web applications that make a real impact.
+              I'm Eneji Victor a full-stack developer with startup experience, used to owning
+              features end-to-end. I move fast, write clean code, and help
+              founders ship products users love.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700">
-                <h3 className="text-white font-semibold mb-2">Location</h3>
-                <p className="text-gray-400">San Francisco, CA</p>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700">
                 <h3 className="text-white font-semibold mb-2">Experience</h3>
-                <p className="text-gray-400">7+ Years</p>
+                <p className="text-gray-400">3+ Years</p>
               </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700">
-                <h3 className="text-white font-semibold mb-2">Projects</h3>
-                <p className="text-gray-400">50+ Completed</p>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700">
-                <h3 className="text-white font-semibold mb-2">Availability</h3>
-                <p className="text-green-500">Open to Opportunities</p>
-              </div>
+             
             </div>
           </div>
         </div>

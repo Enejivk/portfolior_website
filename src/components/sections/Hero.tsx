@@ -146,24 +146,26 @@ const Hero: React.FC = () => {
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Crafting Digital
+                  Full-stack developer
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  Excellence
+                  with startup experience
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-400 max-w-lg">
-                Full-stack developer specializing in building exceptional digital experiences that combine innovation with pixel-perfect execution.
-              </p>
+              {/* <p className="text-xl text-gray-400 max-w-lg">
+                Full-stack developer specializing in building exceptional
+                digital experiences that combine innovation with pixel-perfect
+                execution.
+              </p> */}
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   variant="primary"
                   size="lg"
                   icon={<Mail />}
-                  onClick={() => window.location.href = '#contact'}
+                  onClick={() => (window.location.href = '#contact')}
                   className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
                 >
                   Get in Touch

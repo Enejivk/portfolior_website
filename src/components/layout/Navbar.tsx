@@ -7,9 +7,6 @@ const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -48,7 +45,9 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled
+          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,10 +56,12 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0 flex items-center">
             <a href="#hero" className="text-white flex items-center">
               <Code className="h-8 w-8 text-blue-500 mr-2" />
-              <span className="font-bold text-xl tracking-tight">DevPortfolio</span>
+              <span className="font-bold text-xl tracking-tight">
+                Eneji Victor
+              </span>
             </a>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
@@ -77,16 +78,16 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
-                onClick={() => window.location.href = '#contact'}
+                onClick={() => (window.location.href = '#contact')}
               >
                 Let's Talk
               </Button>
             </div>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
@@ -97,25 +98,35 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Social Icons */}
         <div className="hidden md:flex fixed right-6 bottom-0 flex-col space-y-4 after:content-[''] after:w-[1px] after:h-20 after:bg-gray-600 after:mx-auto after:mt-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors duration-200">
+          <a
+            href="https://github.com/enejivk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+          >
             <GitHub size={20} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors duration-200">
+          <a
+            href="https://www.linkedin.com/in/enejivic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+          >
             <Linkedin size={20} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors duration-200">
-            <Twitter size={20} />
-          </a>
+
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          isMenuOpen
+            ? 'max-h-screen opacity-100'
+            : 'max-h-0 opacity-0 pointer-events-none'
         } bg-gray-900 overflow-hidden`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -134,25 +145,37 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <div className="pt-4">
-            <Button
-              variant="outline"
-              fullWidth
-              onClick={() => {
-                window.location.href = '#contact';
-                setIsMenuOpen(false);
-              }}
+            <a
+            href="mailto:enejivic@gmail.com"
+            className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-blue-500 transition-colors duration-200"
+            onClick={() => setIsMenuOpen(false)}
             >
               Let's Talk
-            </Button>
+            </a>
           </div>
           <div className="flex justify-center space-x-4 pt-6 pb-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-500"
+            >
               <GitHub size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-500"
+            >
               <Linkedin size={20} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-500"
+            >
               <Twitter size={20} />
             </a>
           </div>

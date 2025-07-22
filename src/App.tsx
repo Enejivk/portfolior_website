@@ -6,7 +6,6 @@ import About from './components/sections/About';
 import VideoPresentation from './components/sections/VideoPresentation';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
-import Experience from './components/sections/Experience';
 
 
 function App() {
@@ -66,7 +65,6 @@ function App() {
       <VideoPresentation />
       <Projects />
       <Skills />
-      <Experience />
       <Footer />
     </div>
   );
