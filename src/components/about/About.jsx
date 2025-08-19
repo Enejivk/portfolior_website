@@ -13,7 +13,7 @@ const About = () => {
         
         <div className="about__data">
           <p className="about__description">
-            As a passionate Python and React JavaScript developer, I bring a
+            I am a passionate Python and React JavaScript developer, I bring a
             versatile set of skills in building fast, scalable, and
             user friendly applications.
           </p>
