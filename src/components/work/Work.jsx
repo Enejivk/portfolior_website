@@ -1,32 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./work.css";
 import Projects from "./Projects";
-import {
-  disney,
-  exedoestate,
-  foodeli,
-  gemini,
-  modernbank,
-  nike,
-  shoppingcart,
-  smarthost,
-  crown,
-  dubairealestate,
-  shadcndash,
-  mode,
-  taskly,
-  plantly,
-} from "../../assets/projects";
-
-const projects = []
+import { projects } from "../../assets/projects.js";
 
 const Work = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [filteredProjects, setFilteredProjects] = useState(projects || []);
 
-  const filteredProjects =
-    selectedCategory === "All"
+  useEffect(() => {
+    console.log("All projects:", projects);
+    const filtered = selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+    
+    console.log("Filtered projects:", filtered);
+    setFilteredProjects(filtered);
+  }, [selectedCategory]);
 
   return (
     <section className="work section" id="work">

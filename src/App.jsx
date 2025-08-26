@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
@@ -9,22 +10,31 @@ import Work from "./components/work/Work";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollUp/ScrollUp";
+import ProjectDetail from "./components/work/ProjectDetail";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <main className="main">
-        <Home />
-        <About />
-        <Skills />
-        <Qualification />
-        <Work />
-        <Contact />
-      </main>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main className="main">
+              <Home />
+              <About />
+              <Skills />
+              <Qualification />
+              <Work />
+              <Contact />
+            </main>
+          }
+        />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
       <Footer />
       <ScrollUp />
-    </>
+    </Router>
   );
 };
 

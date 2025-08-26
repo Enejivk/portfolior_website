@@ -42,6 +42,18 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project__card__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project__img {
@@ -66,6 +78,12 @@
   font-weight: var(--font-medium);
   margin-bottom: 0.5rem;
   text-align: left;
+  color: var(--title-color);
+  transition: color 0.3s ease;
+}
+
+.project__card:hover .project__title {
+  color: var(--title-color-dark);
 }
 
 .project__description {
@@ -104,6 +122,8 @@
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .project__button {
@@ -118,11 +138,13 @@
   text-align: center;
   flex: 1;
   display: inline-block;
+  position: relative;
 }
 
 .project__button:hover {
   background-color: var(--title-color-dark);
   transform: translateY(-2px);
+  z-index: 3;
 }
 
 /* Alternative styling if you prefer outlined buttons */
@@ -137,6 +159,13 @@
   color: var(--container-color);
 }
 
+.no__projects {
+  text-align: center;
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  padding: 3rem 0;
+}
+
 @media screen and (max-width: 992px) {
   .work__container {
     grid-template-columns: repeat(3, 218px);
@@ -149,7 +178,7 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .project__card {
     min-height: 320px;
   }
@@ -161,7 +190,7 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .project__card {
     min-height: 300px;
   }
