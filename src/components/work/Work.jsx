@@ -9,10 +9,11 @@ const Work = () => {
 
   useEffect(() => {
     console.log("All projects:", projects);
-    const filtered = selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
-    
+    const filtered =
+      selectedCategory === "All"
+        ? projects
+        : projects.filter((project) => project.category === selectedCategory);
+
     console.log("Filtered projects:", filtered);
     setFilteredProjects(filtered);
   }, [selectedCategory]);
@@ -29,30 +30,6 @@ const Work = () => {
           onClick={() => setSelectedCategory("All")}
         >
           ALL
-        </button>
-        <button
-          className={`work__item ${
-            selectedCategory === "Fullstack" ? "active-work" : ""
-          }`}
-          onClick={() => setSelectedCategory("Fullstack")}
-        >
-          FULLSTACK
-        </button>
-        <button
-          className={`work__item ${
-            selectedCategory === "React" ? "active-work" : ""
-          }`}
-          onClick={() => setSelectedCategory("React")}
-        >
-          REACT
-        </button>
-        <button
-          className={`work__item ${
-            selectedCategory === "Mobile App" ? "active-work" : ""
-          }`}
-          onClick={() => setSelectedCategory("Mobile App")}
-        >
-          MOBILE APP
         </button>
       </div>
 
