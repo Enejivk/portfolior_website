@@ -48,7 +48,8 @@ export const projects = [
       "Creating an AI system that could understand the diverse and complex needs of immigrants while providing accurate, helpful information was challenging. This was addressed by implementing advanced natural language understanding and context retention capabilities, combined with reliable information sources.",
     link: "https://ai-immigration-assistant.example.com",
     github: "https://github.com/yourusername/immigration-ai-chat",
-    videoDemo: "https://www.youtube.com/embed/your-video-id",
+    videoDemo:
+      "https://drive.google.com/file/d/1vEJMNHkfj-04qQCkWUcmGg53vy2JcYIR/preview",
     category: "AI",
   },
   {
@@ -71,7 +72,8 @@ export const projects = [
       "The main challenge was handling large video files efficiently while ensuring a seamless user experience. This was solved by implementing optimized processing algorithms and leveraging AWS's scalable infrastructure.",
     link: "https://youtube-audio-downloader.example.com",
     github: "https://github.com/yourusername/youtube-audio-downloader",
-    videoDemo: "https://www.youtube.com/embed/your-video-id",
+    videoDemo:
+      "https://drive.google.com/file/d/1p3Isdv7Um8Ibczxjc62sVYP5FT9Jimgo/preview",
     category: "Fullstack",
   },
   {
@@ -102,7 +104,8 @@ export const projects = [
       "Implementing an effective way to extract and process PDF content for meaningful chat interactions was challenging. We solved this by creating a robust pipeline that combines document processing techniques with advanced AI capabilities.",
     link: "https://chat-with-pdfs.example.com",
     github: "https://github.com/yourusername/chat-with-pdfs",
-    videoDemo: "https://www.youtube.com/embed/your-video-id",
+    videoDemo:
+      "https://drive.google.com/file/d/1bwoSbHLFIccWxS-oqCDyg7yBSHLouuUC/preview",
     category: "Fullstack",
   },
 ];
