@@ -8,4 +8,4 @@ import web from "./web-design.png";
 import resume from "./EnejiVictorFull-stack.pdf";
 
 
-export { hand, files, send, scroll, work2, laptop, web, responsive,resume };
+export { hand, files, send, scroll, work2, laptop, web,resume };
