@@ -61,6 +61,7 @@
   color: inherit;
   display: block;
   height: 100%;
+  cursor: pointer;
 }
 
 .project__card:hover {
@@ -218,6 +219,41 @@
   margin-top: auto;
   position: relative;
   z-index: 2;
+}
+
+.view__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.view__more__text {
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view__more__text::after {
+  content: "→";
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.project__card:hover .view__more__text {
+  opacity: 1;
+  color: var(--title-color-dark);
+}
+
+.project__card:hover .view__more__text::after {
+  transform: translateX(4px);
 }
 
 .project__button {

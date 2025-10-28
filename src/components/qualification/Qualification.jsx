@@ -29,19 +29,19 @@ const experienceData = [
     title: "Full Stack Developer",
     company: "Justiguid",
     description: "Full Stack Development (Python, React)",
-    period: "2023 – 2024",
+    period: "2023 – present",
   },
   {
     title: "Full stack Engineer",
     company: "Sentenel",
     description: "Python & React Applications",
-    period: "2022",
+    period: "2023",
   },
   {
     title: "Frontend Engineer",
     company: "Picture-Stock",
     description: "React, JavaScript, and CSS",
-    period: "2022",
+    period: "2023",
   },
 ];
 

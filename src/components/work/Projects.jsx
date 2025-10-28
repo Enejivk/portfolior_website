@@ -56,25 +56,8 @@ const Projects = ({ projects }) => {
                 </ul>
               </div>
 
-              <div className="project__links">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project__button"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <i className="uil uil-globe"></i> Live
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project__button project__button--outlined"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <i className="uil uil-github"></i> GitHub
-                </a>
+              <div className="view__more">
+                <span className="view__more__text">Click to view details</span>
               </div>
             </div>
           </div>

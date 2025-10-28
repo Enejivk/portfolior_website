@@ -2,7 +2,7 @@ const Social = () => {
   return (
     <div className="home__social">
       <a
-        href="www.linkedin.com/in/enejivic"
+        href="https://www.linkedin.com/in/enejivic/"
         target="_blank"
         rel="noopener noreferrer"
         className="home__social-icon"
@@ -11,7 +11,7 @@ const Social = () => {
         <span className="home__social-tooltip">LinkedIn</span>
       </a>
       <a
-        href="https://github.com/enejivk"
+        href="https://github.com/Enejivk"
         target="_blank"
         rel="noopener noreferrer"
         className="home__social-icon"

@@ -5,29 +5,7 @@ import immigrationAiChat from "./immigrationaichat.png";
 import noxMetal from "./NOX-METAL.png";
 
 export const projects = [
-  {
-    id: 1,
-    name: "NOX-METAL WAITLIST",
-    image: noxMetal,
-    description:
-      "A premium waitlist system for a YC-backed startup that enhances user engagement through personalization.",
-    longDescription:
-      "Redesigned and implemented a premium, user-friendly waitlist system for a YC-backed startup. Unlike the previous version, which only captured emails, I enhanced the functionality to also collect users' names. This allowed for sending personalized email communications, improving engagement and creating a more professional user experience. The final solution was clean, modern, and aligned with the company's branding standards.",
-    stacks: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
-    features: [
-      "Enhanced user data collection (names + emails)",
-      "Sleek, animated UI with Framer Motion",
-      "Modern, brand-aligned UI/UX design",
-      "Improved conversion rate optimization",
-      "Responsive design for all device sizes",
-    ],
-    challenges:
-      "The main challenge was balancing the need for additional user information with maintaining a frictionless signup process. This was solved by implementing a thoughtful UI design with smooth animations and clear visual cues to guide users through the form while keeping it simple and approachable.",
-    link: "https://nox-metal-waitlist.example.com",
-    github: "https://github.com/yourusername/nox-metal-waitlist",
-    videoDemo: "https://www.youtube.com/embed/your-video-id",
-    category: "Frontend",
-  },
+
   {
     id: 2,
     name: "AI Chat Application for Immigrants",
@@ -46,7 +24,7 @@ export const projects = [
     ],
     challenges:
       "Creating an AI system that could understand the diverse and complex needs of immigrants while providing accurate, helpful information was challenging. This was addressed by implementing advanced natural language understanding and context retention capabilities, combined with reliable information sources.",
-    link: "https://ai-immigration-assistant.example.com",
+    link: "#",
     github: "https://github.com/yourusername/immigration-ai-chat",
     videoDemo:
       "https://drive.google.com/file/d/1vEJMNHkfj-04qQCkWUcmGg53vy2JcYIR/preview",
@@ -70,8 +48,8 @@ export const projects = [
     ],
     challenges:
       "The main challenge was handling large video files efficiently while ensuring a seamless user experience. This was solved by implementing optimized processing algorithms and leveraging AWS's scalable infrastructure.",
-    link: "https://youtube-audio-downloader.example.com",
-    github: "https://github.com/yourusername/youtube-audio-downloader",
+    link: "#",
+    github: "https://github.com/Enejivk/soundTube_frontend.git",
     videoDemo:
       "https://drive.google.com/file/d/1p3Isdv7Um8Ibczxjc62sVYP5FT9Jimgo/preview",
     category: "Fullstack",
@@ -102,8 +80,8 @@ export const projects = [
     ],
     challenges:
       "Implementing an effective way to extract and process PDF content for meaningful chat interactions was challenging. We solved this by creating a robust pipeline that combines document processing techniques with advanced AI capabilities.",
-    link: "https://chat-with-pdfs.example.com",
-    github: "https://github.com/yourusername/chat-with-pdfs",
+    link: "#",
+    github: "https://github.com/Enejivk/chatwithpdf.git",
     videoDemo:
       "https://drive.google.com/file/d/1bwoSbHLFIccWxS-oqCDyg7yBSHLouuUC/preview",
     category: "Fullstack",
