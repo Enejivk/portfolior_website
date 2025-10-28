@@ -5,7 +5,6 @@ import immigrationAiChat from "./immigrationaichat.png";
 import noxMetal from "./NOX-METAL.png";
 
 export const projects = [
-
   {
     id: 2,
     name: "AI Chat Application for Immigrants",
@@ -24,8 +23,8 @@ export const projects = [
     ],
     challenges:
       "Creating an AI system that could understand the diverse and complex needs of immigrants while providing accurate, helpful information was challenging. This was addressed by implementing advanced natural language understanding and context retention capabilities, combined with reliable information sources.",
-    link: "#",
-    github: "https://github.com/yourusername/immigration-ai-chat",
+    link: "",
+    github: "",
     videoDemo:
       "https://drive.google.com/file/d/1vEJMNHkfj-04qQCkWUcmGg53vy2JcYIR/preview",
     category: "AI",
@@ -48,7 +47,7 @@ export const projects = [
     ],
     challenges:
       "The main challenge was handling large video files efficiently while ensuring a seamless user experience. This was solved by implementing optimized processing algorithms and leveraging AWS's scalable infrastructure.",
-    link: "#",
+    link: "",
     github: "https://github.com/Enejivk/soundTube_frontend.git",
     videoDemo:
       "https://drive.google.com/file/d/1p3Isdv7Um8Ibczxjc62sVYP5FT9Jimgo/preview",
@@ -80,7 +79,7 @@ export const projects = [
     ],
     challenges:
       "Implementing an effective way to extract and process PDF content for meaningful chat interactions was challenging. We solved this by creating a robust pipeline that combines document processing techniques with advanced AI capabilities.",
-    link: "#",
+    link: "",
     github: "https://github.com/Enejivk/chatwithpdf.git",
     videoDemo:
       "https://drive.google.com/file/d/1bwoSbHLFIccWxS-oqCDyg7yBSHLouuUC/preview",

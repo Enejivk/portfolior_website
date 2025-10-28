@@ -107,22 +107,26 @@ const ProjectDetail = () => {
         </div>
 
         <div className="project__detail__links">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--flex"
-          >
-            <i className="uil uil-github"></i> GitHub Repository
-          </a>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--flex"
-          >
-            <i className="uil uil-external-link-alt"></i> Live Demo
-          </a>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button--flex"
+            >
+              <i className="uil uil-github"></i> GitHub Repository
+            </a>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button--flex"
+            >
+              <i className="uil uil-external-link-alt"></i> Live Demo
+            </a>
+          )}
         </div>
       </div>
     </section>
