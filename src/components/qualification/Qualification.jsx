@@ -17,7 +17,7 @@ const educationData = [
     period: "2020",
   },
   {
-    title: "Bachelor of Science in Computer Science",
+    title: "Bachelor of Science in Medical Biochemistry",
     school: "Cross River State University of Technology",
     description: "",
     period: "2017",
