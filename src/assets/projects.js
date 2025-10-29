@@ -3,8 +3,71 @@ import sountTubYoutubeAudioDownloader from "./sountTubYoutubeAudioDownloader.png
 import chatWithPdf from "./chatWithPdf.png";
 import immigrationAiChat from "./immigrationaichat.png";
 import noxMetal from "./NOX-METAL.png";
+import boldrWebsite from "./boldr.webp";
 
 export const projects = [
+  {
+    id: 0,
+    name: "Blockchair Website & AI Integration",
+    image:
+      "https://www.ablyazov.dev/_next/image?url=%2Fblockchair.webp&w=3840&q=75" /* Using noxMetal as temporary image */,
+    description:
+      "Led the redesign of blockchair.com and developed innovative features including a Telegram mini-app and AI playground for blockchain data analysis.",
+    longDescription:
+      "As part of a four-member team, spearheaded the complete redesign and optimization of blockchair.com, a high-traffic blockchain explorer serving over 3 million unique monthly visitors. The project encompassed a full rewrite using PHP/Laravel/Blade stack, development of a React-based Telegram mini-app for native crypto wallet integration, and creation of an AI playground showcasing our in-house LLM's capabilities with real-time blockchain data.",
+    stacks: [
+      "PHP",
+      "Laravel",
+      "Blade",
+      "React",
+      "AI/LLM Integration",
+      "Telegram Bot API",
+      "Blockchain",
+    ],
+    features: [
+      "Complete website redesign and optimization",
+      "Telegram mini-app for native crypto wallet integration",
+      "AI playground with real-time blockchain data",
+      "High-traffic infrastructure (3M+ monthly visitors)",
+      "In-house LLM integration",
+      "Business demo tooling",
+    ],
+    challenges:
+      "The main challenge was maintaining high performance and reliability while serving millions of monthly visitors and processing real-time blockchain data. This was achieved through careful optimization of the Laravel stack and implementation of efficient caching strategies. Additionally, integrating the AI playground with real-time data required innovative solutions to ensure accurate and timely responses.",
+    link: "https://blockchair.com/",
+    github: "",
+    category: "Web Development & AI",
+  },
+  {
+    id: 1,
+    name: "Boldr Website & Product Design",
+    image: "https://www.ablyazov.dev/_next/image?url=%2Fboldr.webp&w=1920&q=75",
+    description:
+      "Led the redesign and maintenance of Boldr's website, created product designs, and developed 3D models that drove significant business growth.",
+    longDescription:
+      "As the lead designer and developer for Boldr, I spearheaded a comprehensive website redesign that dramatically improved conversion rates from 0.31% to 2.7%, directly contributing to $2 million in sales in 2024. The project involved front-end development, third-party service integration, and creation of both digital and physical product designs.",
+    stacks: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Adobe Illustrator",
+      "Fusion 360",
+      "3D Modeling",
+    ],
+    features: [
+      "Complete website redesign and maintenance",
+      "Integration of third-party web services",
+      "Front-end development and optimization",
+      "Product graphics and marketing materials",
+      "3D modeling and industrial design",
+      "Conversion rate optimization",
+    ],
+    challenges:
+      "The main challenge was creating a cohesive design system that worked across both digital and physical products while maintaining high conversion rates. This was achieved through iterative design processes and continuous optimization based on user feedback and analytics.",
+    link: "https://pro.boldrenergy.com/",
+    github: "",
+    category: "Web Development & Design",
+  },
   {
     id: 2,
     name: "AI Chat Application for Immigrants",
