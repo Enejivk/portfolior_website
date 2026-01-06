@@ -1,0 +1,267 @@
+/*=============== OPEN SOURCE SECTION ===============*/
+.opensource__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.opensource__timeline {
+  position: relative;
+}
+
+.opensource__item {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.opensource__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.opensource__dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent, #667eea);
+  border-radius: 50%;
+  border: 3px solid var(--container-color);
+  box-shadow: 0 0 0 3px var(--accent, #667eea);
+  z-index: 1;
+}
+
+.opensource__line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--accent, #667eea) 0%,
+    var(--text-color) 100%
+  );
+  opacity: 0.2;
+  margin-top: 0.5rem;
+}
+
+.opensource__content {
+  flex: 1;
+  background: var(--container-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-left: 3px solid var(--accent, #667eea);
+  transition: all 0.3s ease;
+}
+
+.opensource__content:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.opensource__header {
+  margin-bottom: 1rem;
+}
+
+.opensource__title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.opensource__company {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin: 0;
+}
+
+.opensource__badge {
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-medium);
+  padding: 0.2rem 0.6rem;
+  background: var(--accent, #667eea);
+  color: #fff;
+  border-radius: 2rem;
+}
+
+.opensource__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.opensource__role {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+}
+
+.opensource__period {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.opensource__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.opensource__tech {
+  font-size: var(--tiny-font-size);
+  padding: 0.2rem 0.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+}
+
+[data-theme="dark"] .opensource__tech {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+.opensource__prs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.opensource__pr {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--body-color);
+  border-radius: 0.5rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.opensource__pr:hover {
+  background: var(--accent, #667eea);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.opensource__pr i:first-child {
+  font-size: 0.9rem;
+  color: var(--accent, #667eea);
+  transition: color 0.25s ease;
+}
+
+.opensource__pr:hover i:first-child {
+  color: #fff;
+}
+
+.opensource__pr span {
+  flex: 1;
+}
+
+.opensource__external {
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.opensource__pr:hover .opensource__external {
+  opacity: 1;
+}
+
+.opensource__github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: var(--title-color);
+  color: var(--container-color);
+  border-radius: 3rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opensource__github:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.opensource__github i:first-child {
+  font-size: 1.25rem;
+}
+
+.opensource__github i:last-child {
+  transition: transform 0.3s ease;
+}
+
+.opensource__github:hover i:last-child {
+  transform: translateX(5px);
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (max-width: 768px) {
+  .opensource__container {
+    padding: 0 1rem;
+  }
+
+  .opensource__item {
+    gap: 1rem;
+  }
+
+  .opensource__content {
+    padding: 1.25rem;
+  }
+
+  .opensource__pr {
+    padding: 0.5rem 0.6rem;
+    font-size: var(--smaller-font-size);
+  }
+
+  .opensource__github {
+    padding: 0.875rem 1.5rem;
+    font-size: var(--small-font-size);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .opensource__marker {
+    display: none;
+  }
+
+  .opensource__content {
+    border-left: none;
+    border-top: 3px solid var(--accent, #667eea);
+  }
+
+  .opensource__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .opensource__content {
+    padding: 1rem;
+  }
+
+  .opensource__github {
+    padding: 0.75rem 1.25rem;
+    gap: 0.5rem;
+  }
+}

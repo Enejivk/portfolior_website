@@ -20,6 +20,11 @@ const navItems = [
     icon: "uil uil-file-alt",
   },
   {
+    id: "opensource",
+    name: "Open Source",
+    icon: "uil uil-github-alt",
+  },
+  {
     id: "work",
     name: "Portfolio",
     icon: "uil uil-briefcase-alt",
