@@ -105,7 +105,9 @@ const OpenSource = () => {
                 {project.stack && (
                   <div className="opensource__stack">
                     {project.stack.map((tech, i) => (
-                      <span className="opensource__tech" key={i}>{tech}</span>
+                      <span className="opensource__tech" key={i}>
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 )}
