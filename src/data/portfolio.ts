@@ -2,6 +2,7 @@ import sountTubImg from "../assets/sountTubYoutubeAudioDownloader.png";
 import chatWithPdfImg from "../assets/chatWithPdf.png";
 import immigrationAiImg from "../assets/immigrationaichat.png";
 import boldrImg from "../assets/boldr.webp";
+import errlineImg from "../assets/Hero section.jpg";
 
 // Portfolio Data
 export const personalInfo = {
@@ -123,6 +124,31 @@ export const openSource = [
 ];
 
 export const projects = [
+  {
+    id: 0,
+    name: "Errline - Domestic Flight Booking Platform",
+    image: errlineImg,
+    description:
+      "A Nigerian domestic flight booking platform that lets users compare prices, discover routes, and book affordable local flights from trusted airlines.",
+    longDescription:
+      "Errline is a domestic flight booking platform designed to simplify air travel across Nigeria. Users can compare fares from every major Nigerian airline in one place, discover popular routes, and book flights in under 3 minutes. The platform features a smart flight search engine with one-way booking, passenger management, transparent pricing with full tax breakdowns, flash sale promotions, and an upcoming mobile app for iOS and Android. Built with a modern Next.js stack for performance and SEO optimization.",
+    stacks: ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"],
+    features: [
+      "Flight search and price comparison across Nigerian airlines",
+      "Popular route discovery with fare previews",
+      "Transparent pricing with tax and fee breakdowns",
+      "Flash sale promotions and special offers",
+      "Instant booking confirmation in under 3 minutes",
+      "Newsletter subscription for deal alerts",
+      "Mobile app coming soon (iOS & Android)",
+    ],
+    challenges:
+      "Building a responsive, high-performance flight search and comparison engine that aggregates real-time fares from multiple Nigerian airlines while maintaining a seamless user experience and transparent pricing.",
+    link: "https://errline.com/home",
+    github: "",
+    videoDemo: "",
+    category: "Web Development",
+  },
   {
     id: 0,
     name: "Blockchair Website & AI Integration",
