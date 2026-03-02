@@ -157,37 +157,6 @@ export const projects = [
     category: "Web Development & AI",
   },
   {
-    id: 1,
-    name: "Boldr Website & Product Design",
-    image: boldrImg,
-    description:
-      "Led the redesign and maintenance of Boldr's website, created product designs, and developed 3D models that drove significant business growth.",
-    longDescription:
-      "As the lead designer and developer for Boldr, I spearheaded a comprehensive website redesign that dramatically improved conversion rates from 0.31% to 2.7%, directly contributing to $2 million in sales in 2024. The project involved front-end development, third-party service integration, and creation of both digital and physical product designs.",
-    stacks: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Adobe Illustrator",
-      "Fusion 360",
-      "3D Modeling",
-    ],
-    features: [
-      "Complete website redesign and maintenance",
-      "Integration of third-party web services",
-      "Product graphics and marketing materials",
-      "Conversion rate optimization",
-      "Front-end development and optimization",
-      "3D modeling and industrial design",
-    ],
-    challenges:
-      "The main challenge was creating a cohesive design system that worked across both digital and physical products while maintaining high conversion rates.",
-    link: "https://pro.boldrenergy.com/",
-    github: "",
-    videoDemo: "",
-    category: "Web Development & Design",
-  },
-  {
     id: 2,
     name: "AI Chat Application for Immigrants",
     image: immigrationAiImg,
