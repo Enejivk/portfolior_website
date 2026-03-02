@@ -1,7 +1,6 @@
 import sountTubImg from "../assets/sountTubYoutubeAudioDownloader.png";
 import chatWithPdfImg from "../assets/chatWithPdf.png";
 import immigrationAiImg from "../assets/immigrationaichat.png";
-import boldrImg from "../assets/boldr.webp";
 import errlineImg from "../assets/Hero section.jpg";
 
 // Portfolio Data
