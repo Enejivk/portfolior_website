@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { personalInfo, projects, experience, openSource, skills } from "../data/portfolio";
+import { Link } from "react-router-dom";
+import {
+  personalInfo as defaultPersonalInfo,
+  projects as defaultProjects,
+  experience as defaultExperience,
+  openSource as defaultOpenSource,
+  skills as defaultSkills,
+} from "../data/portfolio";
 import profile1 from "../assets/profile1.jpg";
-import { Briefcase, GitBranch, Code2, ArrowRight, Mail, X, Play, Github, Globe, CheckCircle2 } from "lucide-react";
+import { Briefcase, GitBranch, Code2, ArrowRight, Mail, X, Play, Github, Globe, CheckCircle2, Menu } from "lucide-react";
 
 /**
  * PortfolioV5: "Violet Dusk"
@@ -10,7 +17,21 @@ import { Briefcase, GitBranch, Code2, ArrowRight, Mail, X, Play, Github, Globe, 
  * Dusky, contemplative, and modern — an ethereal tech aesthetic.
  */
 
-type Project = (typeof projects)[number];
+type Project = (typeof defaultProjects)[number];
+
+export interface PortfolioV5Props {
+  personalInfo?: typeof defaultPersonalInfo;
+  projects?: typeof defaultProjects;
+  experience?: typeof defaultExperience;
+  openSource?: typeof defaultOpenSource;
+  skills?: typeof defaultSkills;
+  /** "frontend" keeps original skill tags; "fullstack" shows backend + devops tags */
+  variant?: "frontend" | "fullstack";
+  /** Label for the toggle link to the other variant */
+  switchLabel?: string;
+  /** Route path for the other variant */
+  switchTo?: string;
+}
 
 const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
   const hasLiveLink = !!(project as any).link;
@@ -76,8 +97,27 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
   );
 };
 
-const PortfolioV5 = () => {
+const PortfolioV5 = ({
+  personalInfo = defaultPersonalInfo,
+  projects = defaultProjects,
+  experience = defaultExperience,
+  openSource = defaultOpenSource,
+  skills = defaultSkills,
+  variant = "frontend",
+  switchLabel,
+  switchTo,
+}: PortfolioV5Props) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const isFullStack = variant === "fullstack";
+  const heroSkillTags = isFullStack
+    ? [...skills.frontend.slice(0, 3), ...skills.backend.slice(0, 2), { name: "AWS", icon: "aws" }]
+    : [...skills.frontend.slice(0, 5), { name: "Redux", icon: "redux" }];
+  const experienceTagline = isFullStack
+    ? "4+ years building full-stack applications, APIs, and cloud-deployed systems."
+    : "4+ years building dashboards, portals, and enterprise systems.";
+
   return (
     <div className="min-h-screen bg-[#16131e] text-[#e4dff0] font-['DM_Serif_Display',serif] selection:bg-[#a88bcc] selection:text-[#0e0c12] overflow-x-hidden">
       <AnimatePresence>
@@ -92,22 +132,88 @@ const PortfolioV5 = () => {
       <div className="fixed bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#a88bcc]/40 to-transparent z-40" />
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-12 py-8 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 md:py-8 flex justify-between items-center bg-[#16131e]/80 backdrop-blur-md">
         <div className="flex items-center gap-4">
           <Code2 className="text-[#a88bcc]" size={22} />
           <span className="font-sans font-bold text-xs tracking-[0.3em] uppercase text-[#a88bcc]">EV</span>
         </div>
-        <div className="flex gap-12 text-xs font-sans font-bold uppercase tracking-[0.4em] text-[#d0c8da]/50">
+        
+        {/* Desktop Nav */}
+        <div className="hidden md:flex gap-12 text-xs font-sans font-bold uppercase tracking-[0.4em] text-[#d0c8da]/50 items-center">
           <a href="#experience" className="hover:text-[#a88bcc] transition-colors">Experience</a>
           <a href="#projects" className="hover:text-[#a88bcc] transition-colors">Projects</a>
           <a href="#opensource" className="hover:text-[#a88bcc] transition-colors">Open Source</a>
+          {switchTo && switchLabel && (
+            <Link to={switchTo} className="text-[#d0c8da]/40 hover:text-[#a88bcc] transition-colors border border-[#d0c8da]/20 hover:border-[#a88bcc]/40 px-5 py-2">{switchLabel}</Link>
+          )}
           <a href={`mailto:${personalInfo.email}`} className="text-[#a88bcc] border border-[#a88bcc]/30 px-6 py-2 hover:bg-[#a88bcc] hover:text-[#0e0c12] transition-all">Contact</a>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+          className="md:hidden p-2 text-[#a88bcc] hover:bg-[#a88bcc]/10 rounded-lg transition-colors"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
 
-      <main className="max-w-[1400px] mx-auto px-12 pt-48 relative z-10">
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-[72px] left-0 right-0 z-40 md:hidden bg-[#16131e]/95 backdrop-blur-lg border-b border-[#a88bcc]/20"
+          >
+            <div className="flex flex-col px-6 py-6 space-y-4">
+              <a 
+                href="#experience" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-sans font-bold uppercase tracking-[0.3em] text-[#d0c8da]/70 hover:text-[#a88bcc] transition-colors py-3 border-b border-[#a88bcc]/10"
+              >
+                Experience
+              </a>
+              <a 
+                href="#projects" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-sans font-bold uppercase tracking-[0.3em] text-[#d0c8da]/70 hover:text-[#a88bcc] transition-colors py-3 border-b border-[#a88bcc]/10"
+              >
+                Projects
+              </a>
+              <a 
+                href="#opensource" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-sans font-bold uppercase tracking-[0.3em] text-[#d0c8da]/70 hover:text-[#a88bcc] transition-colors py-3 border-b border-[#a88bcc]/10"
+              >
+                Open Source
+              </a>
+              {switchTo && switchLabel && (
+                <Link 
+                  to={switchTo} 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-sans font-bold uppercase tracking-[0.3em] text-[#d0c8da]/70 hover:text-[#a88bcc] transition-colors py-3 border-b border-[#a88bcc]/10"
+                >
+                  {switchLabel}
+                </Link>
+              )}
+              <a 
+                href={`mailto:${personalInfo.email}`} 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-sans font-bold uppercase tracking-[0.3em] text-[#a88bcc] bg-[#a88bcc]/10 hover:bg-[#a88bcc] hover:text-[#0e0c12] transition-all py-4 text-center rounded-lg mt-2"
+              >
+                Contact
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <main className="max-w-[1400px] mx-auto px-6 md:px-12 pt-32 md:pt-48 relative z-10">
         {/* Hero */}
-        <header className="grid lg:grid-cols-2 gap-24 items-center min-h-[80vh] mb-64">
+        <header className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center min-h-[80vh] mb-32 md:mb-64">
           <div className="space-y-14">
             <h1 className="text-6xl md:text-[7.5rem] leading-[0.85] tracking-tight">
               Eneji<br />
@@ -117,10 +223,9 @@ const PortfolioV5 = () => {
               {personalInfo.title}. {personalInfo.description}.
             </p>
             <div className="flex flex-wrap gap-3">
-              {skills.frontend.slice(0, 5).map((s) => (
+              {heroSkillTags.map((s) => (
                 <span key={s.name} className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#a88bcc]/60 border border-[#a88bcc]/20 px-4 py-1.5">{s.name}</span>
               ))}
-              <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#a88bcc]/60 border border-[#a88bcc]/20 px-4 py-1.5">Redux</span>
             </div>
             <div className="flex gap-8 items-center pt-4">
               <motion.a whileHover={{ scale: 1.04 }} href={`mailto:${personalInfo.email}`} className="px-10 py-5 bg-[#a88bcc] text-[#0e0c12] font-sans font-black uppercase text-xs tracking-widest flex items-center gap-4 shadow-[0_0_60px_rgba(168,139,204,0.15)]">
@@ -133,11 +238,45 @@ const PortfolioV5 = () => {
             </div>
           </div>
           <div className="relative group">
-            <div className="aspect-[3/4] relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
-              <img src={profile1} alt="Eneji Victor" className="w-full h-full object-cover grayscale-[0.3] brightness-[0.75] contrast-[1.1] saturate-[0.85] hue-rotate-[10deg] group-hover:grayscale-[0.1] group-hover:brightness-[0.9] transition-all duration-[2s]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#16131e] via-transparent to-[#16131e]/20" />
-              <div className="absolute inset-0 bg-[#a88bcc]/[0.03] mix-blend-overlay" />
-              <div className="absolute inset-0 border border-[#a88bcc]/10" />
+            {/* Animated radial rings */}
+            <div className="absolute -inset-8 flex items-center justify-center pointer-events-none">
+              <motion.div
+                className="absolute w-[calc(100%+64px)] h-[calc(100%+64px)] rounded-full border border-[#a88bcc]/20"
+                animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute w-[calc(100%+96px)] h-[calc(100%+96px)] rounded-full border border-[#a88bcc]/15"
+                animate={{ scale: [1, 1.08, 1], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              />
+              <motion.div
+                className="absolute w-[calc(100%+128px)] h-[calc(100%+128px)] rounded-full border border-[#a88bcc]/10"
+                animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.3, 0.1] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              />
+              {/* Rotating dashed ring */}
+              <motion.div
+                className="absolute w-[calc(100%+48px)] h-[calc(100%+48px)] rounded-full border-2 border-dashed border-[#a88bcc]/25"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              {/* Glowing accent dots on the ring */}
+              <motion.div
+                className="absolute w-[calc(100%+48px)] h-[calc(100%+48px)]"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#a88bcc] shadow-[0_0_12px_#a88bcc]" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#a88bcc]/60 shadow-[0_0_8px_#a88bcc]" />
+                <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-[#a88bcc]/40 shadow-[0_0_6px_#a88bcc]" />
+              </motion.div>
+            </div>
+            <div className="aspect-[3/4] relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6)] rounded-3xl">
+              <img src={profile1} alt="Eneji Victor" className="w-full h-full object-cover grayscale-[0.3] brightness-[0.75] contrast-[1.1] saturate-[0.85] hue-rotate-[10deg] group-hover:grayscale-[0.1] group-hover:brightness-[0.9] transition-all duration-[2s] rounded-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#16131e] via-transparent to-[#16131e]/20 rounded-3xl" />
+              <div className="absolute inset-0 bg-[#a88bcc]/[0.03] mix-blend-overlay rounded-3xl" />
+              <div className="absolute inset-0 border border-[#a88bcc]/10 rounded-3xl" />
               <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                 <p className="font-sans text-[10px] font-bold uppercase tracking-[0.5em] text-[#a88bcc]/60">{personalInfo.title}</p>
                 <Mail size={24} className="text-[#a88bcc]/30" />
@@ -152,7 +291,7 @@ const PortfolioV5 = () => {
             <div className="space-y-8">
               <Briefcase className="text-[#a88bcc]" size={36} />
               <h2 className="text-5xl tracking-tight italic">Experience.</h2>
-              <p className="font-sans text-[#d0c8da]/45 text-sm leading-relaxed italic">4+ years building dashboards, portals, and enterprise systems.</p>
+              <p className="font-sans text-[#d0c8da]/45 text-sm leading-relaxed italic">{experienceTagline}</p>
             </div>
             <div className="lg:col-span-2 space-y-0 divide-y divide-[#d0c8da]/10">
               {experience.map((exp) => (
